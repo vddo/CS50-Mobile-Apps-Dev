@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- JSX code -->
+    <script type="text/jsx">
+
+    	const app = document.getElementById("app")
+
+
+    	function Header({ title }) {
+		  return <h1>{title ? title : 'Default Title'}</h1>;
+		}
+    	
+		function HomePage() {
+		  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+		  return (
+		    <div>
+		      <Header title="Develop. Preview. Ship. 🚀" />
+		      <ul>
+		        {names.map((name) => (
+		          <li key={name}>{name}</li>
+		        ))}
+		      </ul>
+		    </div>
+		  );
+		}
+
+		ReactDOM.render(<HomePage />, app);
+    </script>
+</body>
+
+</html>
